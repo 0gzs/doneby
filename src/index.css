@@ -1,3 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65.2%;
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +16,73 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app {
+  border: 5px solid gold;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-input-form {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em
+}
+
+span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+span p {
+  flex: 1;
+}
+
+span input,
+span select {
+  max-width: 5em;
+  text-align: center;
+  font-size: 2rem;
+  flex: 1;
+  padding: .25em !important;
+  border: 2px;
+}
+
+span select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #777;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+span select::-ms-expand {
+  display: none;
+}
+
+.calculate-btn {
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  padding: .75em;
+  font-size: 1.8rem;
+}
+
+.calculate-btn:hover {
+  cursor: pointer;
 }
