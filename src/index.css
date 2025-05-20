@@ -17,6 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f7f7;
+  font-size: 1.4rem;
 }
 
 code {
@@ -28,8 +29,15 @@ code {
   border: 5px solid gold;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
+  overflow-y: scroll;
+}
+
+h1 {
+  padding: 1.75em 0 1.125em;
 }
 
 .room-input-form {
