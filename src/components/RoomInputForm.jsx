@@ -1,27 +1,27 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const RoomInputForm = () => {
+const RoomInputForm = ({ onFormChange }) => {
   const [startTime, setStartTime] = useState(8)
-  const startTimes = [
-    '8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM'
-  ]
   const [checkouts, setCheckouts] = useState(0)
   const [fullService, setFullService] = useState(0)
   const [stayoverService, setStayoverService] = useState(0)
 
-  const calculateServiceTime = e => {
-    const type = e.target.name
-    const amount = parseInt(e.target.value)
+  useEffect(() => {
+    onFormChange({ startTime, checkouts, fullService, stayoverService })
+  }, [startTime, checkouts, fullService, stayoverService, onFormChange])
 
-    switch (type) {
+  const handlRoomChange = e => {
+    const { name, value } = e.target
+
+    switch (name) {
       case 'checkout':
-        setCheckouts(amount)
+        setCheckouts(value)
         break
       case 'full':
-        setFullService(amount)
+        setFullService(value)
         break
       case 'stayovers':
-        setStayoverService(amount)
+        setStayoverService(value)
         break
       default:
         break
@@ -34,13 +34,10 @@ const RoomInputForm = () => {
     <div className="room-input-form">
       <span>
         <label htmlFor="startTime" className='font-bold'>Start Time: </label>
-        <select id="startTime" value={startTime} onChange={handleStartTime}>
-          <option value="">-- Select</option>
-          {startTimes.map((time, id) => (
-            <option key={id} value={time}>
-              {time}
-            </option>
-          ))}
+        <select value={startTime} onChange={handleStartTime}>
+          {['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM'].map((time, id) => {
+            return <option key={id} value={time}>{time}</option>
+          })}
         </select>
       </span>
 
@@ -51,7 +48,7 @@ const RoomInputForm = () => {
           type='number'
           min='0'
           value={checkouts}
-          onChange={calculateServiceTime} />
+          onChange={handlRoomChange} />
       </span>
 
       <span>
@@ -61,7 +58,7 @@ const RoomInputForm = () => {
           type='number'
           min='0'
           value={fullService}
-          onChange={calculateServiceTime} />
+          onChange={handlRoomChange} />
       </span>
 
       <span>
@@ -71,10 +68,8 @@ const RoomInputForm = () => {
           type='number'
           min='0'
           value={stayoverService}
-          onChange={calculateServiceTime} />
+          onChange={handlRoomChange} />
       </span>
-
-      <button className="calculate-btn">Calculate</button>
     </div>
   )
 }
