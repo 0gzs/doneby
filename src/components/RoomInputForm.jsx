@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 const RoomInputForm = ({ onFormChange }) => {
-  const [startTime, setStartTime] = useState(8)
+  const [startTime, setStartTime] = useState('8:00 AM')
   const [checkouts, setCheckouts] = useState(0)
   const [fullService, setFullService] = useState(0)
   const [stayoverService, setStayoverService] = useState(0)
@@ -12,16 +12,17 @@ const RoomInputForm = ({ onFormChange }) => {
 
   const handlRoomChange = e => {
     const { name, value } = e.target
+    const parsedValue = parseInt(value, 10) || 0
 
     switch (name) {
       case 'checkout':
-        setCheckouts(value)
+        setCheckouts(parsedValue)
         break
       case 'full':
-        setFullService(value)
+        setFullService(parsedValue)
         break
       case 'stayovers':
-        setStayoverService(value)
+        setStayoverService(parsedValue)
         break
       default:
         break
