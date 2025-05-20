@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/doneby/static/css/main.6cf1bc43.css",
+    "main.js": "/doneby/static/js/main.f1c95ec2.js",
+    "index.html": "/doneby/index.html",
+    "main.6cf1bc43.css.map": "/doneby/static/css/main.6cf1bc43.css.map",
+    "main.f1c95ec2.js.map": "/doneby/static/js/main.f1c95ec2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cf1bc43.css",
+    "static/js/main.f1c95ec2.js"
+  ]
+}
