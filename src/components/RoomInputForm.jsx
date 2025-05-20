@@ -48,7 +48,7 @@ const RoomInputForm = ({ onFormChange }) => {
           name='checkout'
           type='number'
           min='0'
-          value={checkouts}
+          value={checkouts.toString()}
           onChange={handlRoomChange} />
       </span>
 
@@ -58,7 +58,7 @@ const RoomInputForm = ({ onFormChange }) => {
           name='full'
           type='number'
           min='0'
-          value={fullService}
+          value={fullService.toString()}
           onChange={handlRoomChange} />
       </span>
 
@@ -68,7 +68,7 @@ const RoomInputForm = ({ onFormChange }) => {
           name='stayovers'
           type='number'
           min='0'
-          value={stayoverService}
+          value={stayoverService.toString()}
           onChange={handlRoomChange} />
       </span>
     </div>
