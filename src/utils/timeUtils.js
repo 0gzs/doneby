@@ -22,7 +22,7 @@ export const calculateClockOut = (data) => {
 
 export const timeStringToMinutes = (timeStr) => {
   const [time, modifier] = timeStr.split(" ")
-  let [hours, minutes] = time.split(":").map(Number)
+  let [hours, minutes] = getHourMinutes(time)
 
   if (modifier === "PM" && hours !== 12) hours += 12
   if (modifier === "AM" && hours === 12) hours = 0
@@ -40,4 +40,23 @@ export const minutesToTimeString = (minutes) => {
 
   const paddedMins = mins.toString().padStart(2, "0")
   return `${hours}:${paddedMins} ${modifier}`
+}
+
+export const getHourMinutes = (time) => {
+  let [hours, minutes] = time.split(":").map(Number)
+  return [hours, minutes]
+}
+
+export const generateHourlyTimeline = (startTimeStr, endTimeStr) => {
+  const result = []
+
+  let currentMins = timeStringToMinutes(startTimeStr)
+  const endMins = timeStringToMinutes(endTimeStr)
+
+  while (currentMins <= endMins) {
+    result.push(minutesToTimeString(currentMins))
+    currentMins += 60
+  }
+
+  return result
 }
