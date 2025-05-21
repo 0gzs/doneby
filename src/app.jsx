@@ -1,6 +1,7 @@
 import { useState } from "react"
 import RoomInputForm from "./components/RoomInputForm"
 import TimeCalculator from "./components/TimeCalculator"
+import Timeline from "./components/Timeline"
 
 function App() {
   const [formData, setFormData] = useState({
@@ -16,13 +17,14 @@ function App() {
 
   return (
     <div className="app">
-      <h1>DoneBy</h1>
+      <Timeline />
+      {/* <h1>DoneBy</h1>
       <RoomInputForm onFormChange={setFormData} />
       <button className="calculate-btn" onClick={handleCalculate}>Calculate</button>
 
       {showResult && (
         <TimeCalculator formData={formData} />
-      )}
+      )}*/}
     </div>
   )
 }
