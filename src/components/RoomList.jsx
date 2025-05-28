@@ -1,6 +1,6 @@
 const RoomList = ({ roomList, handleSelectedRooms, isSelected }) => {
   return (
-    <div className="room-list">
+    <div className="bottom-block">
       {roomList.map(room => {
         return (
           <div

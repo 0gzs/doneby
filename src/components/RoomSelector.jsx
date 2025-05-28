@@ -108,7 +108,7 @@ const RoomSelector = ({ roomData, handleSubmission }) => {
 
       <div className='block'>
 
-        <p className='room-select-title'>
+        <p className='title'>
           {serviceTypeHeader === 'fullService' ?
             'Full Service'
             : serviceTypeHeader.charAt(0).toUpperCase() + serviceTypeHeader.slice(1)} ({serviceTypeRoomCount})

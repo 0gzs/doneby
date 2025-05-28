@@ -13,13 +13,21 @@ function App() {
   const [currentView, setCurrentView] = useState('form')
 
   const startWorkDay = () => {
+    if (formInput.checkouts === 0 && formInput.stayoverService === 0 && formInput.fullService === 0) return
     let generated = generateWorkData(formInput)
     if (formInput) setWorkData({ ...generated })
     setCurrentView('room-select')
   }
 
+  const reset = () => {
+    setFormInput(null)
+    setWorkData(null)
+    setAssignedRooms(null)
+    setCurrentView('form')
+  }
+
   useEffect(() => {
-    if (assignedRooms) console.log(assignedRooms)
+    if (assignedRooms) setCurrentView('review')
   }, [assignedRooms])
 
   return (
@@ -48,6 +56,25 @@ function App() {
             count: workData.fullService
           },
         ]} handleSubmission={setAssignedRooms} />
+      )}
+
+      {currentView === 'review' && (
+        <div className="main-container">
+          <div className="block">
+            <p className="title">Your day in review</p>
+            <div className='selector-btns'>
+              <button
+                className="btn"
+                onClick={reset}
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <div className="bottom-block">
+          </div>
+        </div>
       )}
 
     </div>
