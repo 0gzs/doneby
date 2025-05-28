@@ -1,15 +1,14 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  max-width: 120rem;
+  width: 100%;
   height: 100vh;
-  padding: 1em;
+  padding: 2em;
   gap: 1em;
 }
 
 .room-select-title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 900;
 }
 
@@ -17,8 +16,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
-  padding: 2em;
-  justify-content: center;
+  padding: 1em;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #fff;
   overflow-y: auto;
@@ -56,4 +55,16 @@
 .room-card:focus {
   outline: 3px solid #007acc;
   outline-offset: 2px;
+}
+
+.selector-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (min-width: 90rem) {
+  .main-container {
+    width: 90vw;
+    max-width: 90rem;
+  }
 }
