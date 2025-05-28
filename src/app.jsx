@@ -1,23 +1,54 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import RoomInputForm from "./components/RoomInputForm"
+import { generateWorkData } from "./utils/timeUtils"
+
+import RoomSelector from "./components/RoomSelector"
 
 function App() {
-  const [formData, setFormData] = useState({
-    startTime: '8:00 AM',
-    checkouts: 0,
-    fullService: 0,
-    stayoverService: 0
-  })
+  const [formInput, setFormInput] = useState()
+  const [workData, setWorkData] = useState()
+  const [assignedRooms, setAssignedRooms] = useState()
 
-  const handleCalculate = () => setShowResult(true)
+  const [currentView, setCurrentView] = useState('form')
+
+  const startWorkDay = () => {
+    let generated = generateWorkData(formInput)
+    if (formInput) setWorkData({ ...generated })
+    setCurrentView('room-select')
+  }
+
+  useEffect(() => {
+    if (assignedRooms) console.log(assignedRooms)
+  }, [assignedRooms])
 
   return (
     <div className="app">
 
-      <h1>DoneBy</h1>
-      <RoomInputForm onFormChange={setFormData} />
-      <button className="calculate-btn" onClick={handleCalculate}>Calculate</button>
+      {currentView === 'form' && (
+        <>
+          <h1>DoneBy</h1>
+          <RoomInputForm onFormChange={setFormInput} />
+          <button className="btn" onClick={startWorkDay}>Start The Day</button>
+        </>
+      )}
+
+      {currentView === 'room-select' && (
+        <RoomSelector roomData={[
+          {
+            serviceType: 'checkouts',
+            count: workData.checkouts
+          },
+          {
+            serviceType: 'stayovers',
+            count: workData.stayoverService
+          },
+          {
+            serviceType: 'fullService',
+            count: workData.fullService
+          },
+        ]} handleSubmission={setAssignedRooms} />
+      )}
 
     </div>
   )

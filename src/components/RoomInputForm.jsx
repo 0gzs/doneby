@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import '../styles/room-input.css'
 
 const RoomInputForm = ({ onFormChange }) => {
   const [startTime, setStartTime] = useState('8:00 AM')

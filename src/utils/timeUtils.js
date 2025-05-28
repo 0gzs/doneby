@@ -22,7 +22,7 @@ export const generateWorkData = (data) => {
   const lunch = roomTime + taskTime > 360 ? 30 : 0
 
   const totalTime = roomTime + taskTime + lunch
-  const shiftEnd = minutesToTimeString(totalTime + startMins)
+  const shiftEnd = totalTime + startMins
 
   return {
     shiftStart,
