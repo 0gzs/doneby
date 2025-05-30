@@ -1,5 +1,9 @@
+export const CHECKOUTS_TIME = 25
+export const FULL_SERVICE_TIME = 20
+export const STAYOVERS_TIME = 15
+
 export const generateWorkData = (data) => {
-  const { startTime, checkouts, fullService, stayoverService } = data
+  const { startTime, checkouts, fullService, stayovers } = data
 
   const exterior = 10
   const restock = 15
@@ -9,11 +13,11 @@ export const generateWorkData = (data) => {
   const startMins = timeStringToMinutes(startTime)
   const checkoutMins = checkouts * 25
   const fullServiceMins = fullService * 20
-  const stayoverMins = stayoverService * 15
+  const stayoverMins = stayovers * 15
 
   const checkoutsCount = checkouts
   const fullServiceCount = fullService
-  const stayoverCount = stayoverService
+  const stayoverCount = stayovers
 
   const shiftStart = startMins
   const roomTime = checkoutMins + fullServiceMins + stayoverMins
@@ -36,7 +40,7 @@ export const generateWorkData = (data) => {
     shiftEnd,
     checkouts: checkoutsCount,
     fullService: fullServiceCount,
-    stayoverService: stayoverCount,
+    stayovers: stayoverCount,
   }
 }
 
@@ -67,6 +71,12 @@ export const getHourMinutes = (time) => {
   return [hours, minutes]
 }
 
+export const minutesToHoursString = (mins) => {
+  const hours = Math.floor(mins / 60)
+  const minutes = mins % 60
+  return `${hours} ${hours === 1 ? "hour" : "hours"} and ${minutes} minutes`
+}
+
 export const generateHourlyTimeline = (shiftStart, shiftEnd) => {
   let end = timeStringToMinutes(shiftEnd)
   const result = []
@@ -81,6 +91,4 @@ export const generateHourlyTimeline = (shiftStart, shiftEnd) => {
   return result
 }
 
-export const formatTimeForDisplay = (time) => {
-  console.log(time)
-}
+export const formatTimeForDisplay = (time) => {}

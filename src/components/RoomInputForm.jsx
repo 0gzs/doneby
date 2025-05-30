@@ -5,25 +5,25 @@ const RoomInputForm = ({ onFormChange }) => {
   const [startTime, setStartTime] = useState('8:00 AM')
   const [checkouts, setCheckouts] = useState(0)
   const [fullService, setFullService] = useState(0)
-  const [stayoverService, setStayoverService] = useState(0)
+  const [stayovers, setStayovers] = useState(0)
 
   useEffect(() => {
-    onFormChange({ startTime, checkouts, fullService, stayoverService })
-  }, [startTime, checkouts, fullService, stayoverService, onFormChange])
+    onFormChange({ startTime, checkouts, fullService, stayovers })
+  }, [startTime, checkouts, fullService, stayovers, onFormChange])
 
   const handlRoomChange = e => {
     const { name, value } = e.target
     const parsedValue = parseInt(value, 10) || 0
 
     switch (name) {
-      case 'checkout':
+      case 'checkouts':
         setCheckouts(parsedValue)
         break
-      case 'full':
+      case 'fullService':
         setFullService(parsedValue)
         break
       case 'stayovers':
-        setStayoverService(parsedValue)
+        setStayovers(parsedValue)
         break
       default:
         break
@@ -46,7 +46,7 @@ const RoomInputForm = ({ onFormChange }) => {
       <span>
         <p>Checkouts</p>
         <input
-          name='checkout'
+          name='checkouts'
           type='number'
           min='0'
           value={checkouts.toString()}
@@ -56,7 +56,7 @@ const RoomInputForm = ({ onFormChange }) => {
       <span>
         <p>Full-Service</p>
         <input
-          name='full'
+          name='fullService'
           type='number'
           min='0'
           value={fullService.toString()}
@@ -69,7 +69,7 @@ const RoomInputForm = ({ onFormChange }) => {
           name='stayovers'
           type='number'
           min='0'
-          value={stayoverService.toString()}
+          value={stayovers.toString()}
           onChange={handlRoomChange} />
       </span>
     </div>

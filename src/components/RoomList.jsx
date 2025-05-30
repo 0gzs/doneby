@@ -1,16 +1,16 @@
+import RoomCard from "./RoomCard"
+
 const RoomList = ({ roomList, handleSelectedRooms, isSelected }) => {
   return (
-    <div className="bottom-block">
-      {roomList.map(room => {
+    <div className="flex-wrap">
+      {roomList.map((room, i) => {
         return (
-          <div
-            key={room.number}
-            className={`room-card ${isSelected(room) ? 'selected' : ''}`}
-            onClick={() => handleSelectedRooms(room)}
-          >
-            <p className="room-type">{room.type}</p>
-            <p className="room-number">{room.number}</p>
-          </div>
+          <RoomCard
+            key={i}
+            room={room}
+            handleSelectedRooms={handleSelectedRooms}
+            isSelected={isSelected}
+          />
         )
       })}
     </div>

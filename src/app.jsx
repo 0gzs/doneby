@@ -4,6 +4,8 @@ import RoomInputForm from "./components/RoomInputForm"
 import { generateWorkData } from "./utils/timeUtils"
 
 import RoomSelector from "./components/RoomSelector"
+import RoomCard from "./components/RoomCard"
+import Review from "./components/Review"
 
 function App() {
   const [formInput, setFormInput] = useState()
@@ -13,7 +15,7 @@ function App() {
   const [currentView, setCurrentView] = useState('form')
 
   const startWorkDay = () => {
-    if (formInput.checkouts === 0 && formInput.stayoverService === 0 && formInput.fullService === 0) return
+    if (formInput.checkouts === 0 && formInput.stayovers === 0 && formInput.fullService === 0) return
     let generated = generateWorkData(formInput)
     if (formInput) setWorkData({ ...generated })
     setCurrentView('room-select')
@@ -49,7 +51,7 @@ function App() {
           },
           {
             serviceType: 'stayovers',
-            count: workData.stayoverService
+            count: workData.stayovers
           },
           {
             serviceType: 'fullService',
@@ -59,22 +61,11 @@ function App() {
       )}
 
       {currentView === 'review' && (
-        <div className="main-container">
-          <div className="block">
-            <p className="title">Your day in review</p>
-            <div className='selector-btns'>
-              <button
-                className="btn"
-                onClick={reset}
-              >
-                Reset
-              </button>
-            </div>
-          </div>
-
-          <div className="bottom-block">
-          </div>
-        </div>
+        <Review
+          assignedRooms={assignedRooms}
+          reset={reset}
+          workData={workData}
+        />
       )}
 
     </div>

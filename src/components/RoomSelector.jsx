@@ -104,16 +104,14 @@ const RoomSelector = ({ roomData, handleSubmission }) => {
 
 
   return (
-    <div className="main-container">
+    <div className="main-layout">
 
-      <div className='block'>
-
+      <div className='layout-section'>
         <p className='title'>
           {serviceTypeHeader === 'fullService' ?
             'Full Service'
             : serviceTypeHeader.charAt(0).toUpperCase() + serviceTypeHeader.slice(1)} ({serviceTypeRoomCount})
         </p>
-
 
         <div className='selector-btns'>
           <button
@@ -126,14 +124,16 @@ const RoomSelector = ({ roomData, handleSubmission }) => {
         </div>
       </div>
 
-      {selectedRooms && (
-        <RoomList
-          roomList={roomList}
-          selectedRooms={selectedRooms}
-          handleSelectedRooms={handleSelectedRooms}
-          isSelected={isSelected}
-        />
-      )}
+      <div className='scrollable'>
+        {selectedRooms && (
+          <RoomList
+            roomList={roomList}
+            selectedRooms={selectedRooms}
+            handleSelectedRooms={handleSelectedRooms}
+            isSelected={isSelected}
+          />
+        )}
+      </div>
     </div>
   )
 }
