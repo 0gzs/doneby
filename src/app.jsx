@@ -4,8 +4,27 @@ import RoomInputForm from "./components/RoomInputForm"
 import { generateWorkData } from "./utils/timeUtils"
 
 import RoomSelector from "./components/RoomSelector"
-import RoomCard from "./components/RoomCard"
 import Review from "./components/Review"
+
+const STORAGE_KEY = 'doneby-session'
+
+const saveSession = (data) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+}
+
+const loadSession = () => {
+  const stored = localStorage.getItem(STORAGE_KEY)
+  if (!stored) return null
+  try {
+    return JSON.parse(stored)
+  } catch {
+    return null
+  }
+}
+
+const clearSession = () => {
+  localStorage.removeItem(STORAGE_KEY)
+}
 
 function App() {
   const [formInput, setFormInput] = useState()
@@ -26,7 +45,24 @@ function App() {
     setWorkData(null)
     setAssignedRooms(null)
     setCurrentView('form')
+    clearSession()
   }
+
+  useEffect(() => {
+    const existing = loadSession()
+    if (existing?.workData && existing?.assignedRooms) {
+      setWorkData(existing.workData)
+      setAssignedRooms(existing.assignedRooms)
+      setCurrentView('review')
+    }
+  }, [])
+
+  useEffect(() => {
+    if (assignedRooms && workData) {
+      saveSession({ workData, assignedRooms })
+      setCurrentView('review')
+    }
+  }, [assignedRooms])
 
   useEffect(() => {
     if (assignedRooms) setCurrentView('review')
