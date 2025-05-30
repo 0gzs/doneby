@@ -1,0 +1,374 @@
+[
+  {
+    "number": 100,
+    "type": "KXTO"
+  },
+  {
+    "number": 101,
+    "type": "KXTO"
+  },
+  {
+    "number": 102,
+    "type": "KXTD"
+  },
+  {
+    "number": 103,
+    "type": "SXQL"
+  },
+  {
+    "number": 104,
+    "type": "KXTD"
+  },
+  {
+    "number": 105,
+    "type": "NQJZ"
+  },
+  {
+    "number": 106,
+    "type": "SXQL"
+  },
+  {
+    "number": 107,
+    "type": "SXQL"
+  },
+  {
+    "number": 130,
+    "type": "SXQL"
+  },
+  {
+    "number": 131,
+    "type": "SXQL"
+  },
+  {
+    "number": 132,
+    "type": "SXQL"
+  },
+  {
+    "number": 133,
+    "type": "KXTD"
+  },
+  {
+    "number": 134,
+    "type": "QXTO"
+  },
+  {
+    "number": 135,
+    "type": "SXQL"
+  },
+  {
+    "number": 136,
+    "type": "KXTO"
+  },
+  {
+    "number": 137,
+    "type": "SXQL"
+  },
+  {
+    "number": 138,
+    "type": "KXTD"
+  },
+  {
+    "number": 139,
+    "type": "KXTD"
+  },
+  {
+    "number": 200,
+    "type": "SXQL"
+  },
+  {
+    "number": 201,
+    "type": "KXTD"
+  },
+  {
+    "number": 202,
+    "type": "KXTO"
+  },
+  {
+    "number": 203,
+    "type": "KXTD"
+  },
+  {
+    "number": 204,
+    "type": "SXQL"
+  },
+  {
+    "number": 205,
+    "type": "SXQL"
+  },
+  {
+    "number": 206,
+    "type": "KXTO"
+  },
+  {
+    "number": 207,
+    "type": "QXTO"
+  },
+  {
+    "number": 208,
+    "type": "KXTO"
+  },
+  {
+    "number": 209,
+    "type": "SXQL"
+  },
+  {
+    "number": 210,
+    "type": "NQJZ"
+  },
+  {
+    "number": 211,
+    "type": "SXQL"
+  },
+  {
+    "number": 212,
+    "type": "SXQL"
+  },
+  {
+    "number": 213,
+    "type": "SXQL"
+  },
+  {
+    "number": 214,
+    "type": "KXTO"
+  },
+  {
+    "number": 215,
+    "type": "KXTO"
+  },
+  {
+    "number": 216,
+    "type": "KXTO"
+  },
+  {
+    "number": 217,
+    "type": "KXTD"
+  },
+  {
+    "number": 219,
+    "type": "SXQL"
+  },
+  {
+    "number": 220,
+    "type": "NQJZ"
+  },
+  {
+    "number": 221,
+    "type": "SXQL"
+  },
+  {
+    "number": 222,
+    "type": "KXTO"
+  },
+  {
+    "number": 223,
+    "type": "SXQL"
+  },
+  {
+    "number": 224,
+    "type": "SXQL"
+  },
+  {
+    "number": 225,
+    "type": "KXTO"
+  },
+  {
+    "number": 226,
+    "type": "KXTO"
+  },
+  {
+    "number": 227,
+    "type": "NQJZ"
+  },
+  {
+    "number": 228,
+    "type": "SXQL"
+  },
+  {
+    "number": 229,
+    "type": "SXQL"
+  },
+  {
+    "number": 230,
+    "type": "NQJZ"
+  },
+  {
+    "number": 231,
+    "type": "NQRUD"
+  },
+  {
+    "number": 232,
+    "type": "KXTD"
+  },
+  {
+    "number": 233,
+    "type": "NQRUE"
+  },
+  {
+    "number": 234,
+    "type": "KXTO"
+  },
+  {
+    "number": 235,
+    "type": "KXTD"
+  },
+  {
+    "number": 236,
+    "type": "SXQL"
+  },
+  {
+    "number": 237,
+    "type": "SXQL"
+  },
+  {
+    "number": 238,
+    "type": "NQJZ"
+  },
+  {
+    "number": 239,
+    "type": "NQJZ"
+  },
+  {
+    "number": 300,
+    "type": "KXTO"
+  },
+  {
+    "number": 301,
+    "type": "KXTD"
+  },
+  {
+    "number": 302,
+    "type": "KXTO"
+  },
+  {
+    "number": 303,
+    "type": "NKJZS"
+  },
+  {
+    "number": 304,
+    "type": "SXQL"
+  },
+  {
+    "number": 305,
+    "type": "SXQL"
+  },
+  {
+    "number": 306,
+    "type": "KXTD"
+  },
+  {
+    "number": 307,
+    "type": "KXTD"
+  },
+  {
+    "number": 308,
+    "type": "NQJZ"
+  },
+  {
+    "number": 309,
+    "type": "SXQL"
+  },
+  {
+    "number": 310,
+    "type": "NQJZ"
+  },
+  {
+    "number": 311,
+    "type": "SXQL"
+  },
+  {
+    "number": 312,
+    "type": "NQRUE"
+  },
+  {
+    "number": 313,
+    "type": "SXQL"
+  },
+  {
+    "number": 314,
+    "type": "KXTO"
+  },
+  {
+    "number": 315,
+    "type": "SXQL"
+  },
+  {
+    "number": 316,
+    "type": "NQJZ"
+  },
+  {
+    "number": 317,
+    "type": "SXQL"
+  },
+  {
+    "number": 319,
+    "type": "NKJZS"
+  },
+  {
+    "number": 339,
+    "type": "KXTO"
+  },
+  {
+    "number": 340,
+    "type": "SXQL"
+  },
+  {
+    "number": 341,
+    "type": "SXQL"
+  },
+  {
+    "number": 342,
+    "type": "SXQL"
+  },
+  {
+    "number": 343,
+    "type": "SXQL"
+  },
+  {
+    "number": 344,
+    "type": "SXQL"
+  },
+  {
+    "number": 345,
+    "type": "SXQL"
+  },
+  {
+    "number": 346,
+    "type": "SXQL"
+  },
+  {
+    "number": 347,
+    "type": "NQJZ"
+  },
+  {
+    "number": 348,
+    "type": "KXTD"
+  },
+  {
+    "number": 349,
+    "type": "SXQL"
+  },
+  {
+    "number": 350,
+    "type": "KXTO"
+  },
+  {
+    "number": 351,
+    "type": "KXTD"
+  },
+  {
+    "number": 352,
+    "type": "NQJZ"
+  },
+  {
+    "number": 353,
+    "type": "SXQL"
+  },
+  {
+    "number": 354,
+    "type": "SXQL"
+  },
+  {
+    "number": 355,
+    "type": "KXTD"
+  }
+]
